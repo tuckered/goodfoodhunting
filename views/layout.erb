@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Good Food Hunting</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+</head>
+<body>
+
+
+<%# user.find_by because it gives back a truthy or falsey so they if statement can be used or not.  %>
+<% if logged_in? %>
+  logged in as <%= current_user.email %>
+
+  <%# this is needed because you can't straight up say method="delete" so this is the work around.%>
+  <form action="/session" method="post">
+  <input type="hidden" name="_method"         value="delete"> 
+    <button>logout</button>
+  </form>
+  
+  <% end %>
+
+
+  <%= yield %>
+
+</body>
+</html>
+
+
+
+
+<%# 
+<%# user.find_by because it gives back a truthy or falsey so they if statement can be used or not.  %>
+<%# if User.find_by(id: session[:user_id]) %>
+
+<%# never assume you have the information. always look up and check you have it in the database.  %>
+<%# user.find however, throws an error if returns false. All good if true. false will crash the app. %>
+  <%# logged in as = User.find(session[:user_id]).email %>
+
+  <%# this is needed because you can't straight up say method="delete" so this is the work around.%>
+  <%# <form action="/session" method="post">
+  <input type="hidden" name="_method"         value="delete"> 
+    <button>logout</button> %>
+  <%# </form> %> 
+  

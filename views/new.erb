@@ -1,0 +1,11 @@
+<h1>new dish</h1>
+
+<%# default form method is GET. change to POST %>
+<form action="/dishes" method="post">
+  <label for="">name</label>
+  <%# matching input names from database. e.g. name, image_url %>
+  <input type="text" name="name">
+  <label for="">image url</label>
+  <input type="text" name="image_url">
+  <button>post</button>
+</form>

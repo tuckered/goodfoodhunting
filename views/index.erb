@@ -1,0 +1,16 @@
+<h1>goodfoodhunting</h1>
+
+<a href="/dishes/new">post new dish</a>
+
+
+<% @dishes.each do |dish| %>
+
+  <p>
+   <%# Here the dishes/ url needs the reference from the database which here is dish.name. %>
+    <a href="/dishes/<%= dish.id %>">
+    <%# another dish.name needs to be put within the A tag to actually show on the page.  %>
+      <%= dish.name %>
+    </a>
+  </p>
+
+<% end %>
